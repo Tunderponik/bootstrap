@@ -1,0 +1,22 @@
+body {
+    background: rgb(206,16,241);
+    background: linear-gradient(90deg, rgba(206,16,241,1) 0%, rgba(232,10,210,1) 0%, rgba(0,54,255,1) 100%); 
+    width:1000px;
+    margin:0px auto;
+  }
+
+.caja { 
+    font-family: sans-serif; 
+    font-size: 18px; 
+    font-weight: 400; 
+    color: #000000; 
+    background:#ffffff 
+}
+
+td, tr  { 
+    font-family: sans-serif; 
+    font-size: 18px; 
+    font-weight: 400; 
+    color: #000000; 
+    background:#ffffff 
+}
