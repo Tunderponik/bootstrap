@@ -20,3 +20,14 @@ td, tr  {
     color: #000000; 
     background:#ffffff 
 }
+.bg-propio{
+    background-image: url('/imagenes/faltazo.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+
+
+}
+
+div  { 
+    background:#ffffff 
+}

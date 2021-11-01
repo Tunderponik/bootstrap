@@ -1,0 +1,1496 @@
+<html><head><script type="text/javascript" async="" src="https://script.4dex.io/localstore.js"></script>
+    <title>Venge.io</title>
+
+    <meta name="description" content="Venge is an objective-based first-person shooter. Every match is an intense unique experience with the ability cards that you can get in the game. Play it on browser, no download, and free!">
+
+    <meta name="keywords" content="multiplayer, io, 3D Shooter, objective-based, FPS, no download, browser game, game, web game">
+
+    <link rel="canonical" href="https://venge.io">
+
+    <link rel="icon" href="favicon-96x96.png" type="image/x-icon">
+    <meta content="https://venge.io/thumbnail.jpg" property="og:image">
+
+    <meta property="og:type" content="website">
+
+    <meta property="og:title" content="Play Venge.io!">
+    <meta property="og:description" content="Click on this link to start a game with your friend! Venge is an objective-based first-person shooter. Play it on browser, no download, and free!">
+
+    <meta property="og:url" content="https://venge.io/">
+    <meta property="og:site_name" content="venge.io">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+
+    <script src="https://s0.2mdn.net/instream/video/client.js" async="" type="text/javascript"></script><script src="https://rules.quantcount.com/rules-p-VzKDgYuw-1KTr.js" async=""></script><script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script src="https://secure.quantserve.com/quant.js" async="" type="text/javascript"></script><script async="" type="text/javascript" src="https://quantcast.mgr.consensu.org/tcfv2/cmp2.js?referer=venge.io"></script><script async="" type="text/javascript" src="https://quantcast.mgr.consensu.org/choice/VzKDgYuw-1KTr/venge.io/choice.js"></script><script type="text/javascript">
+        var VERSION = '9ad1f6';
+        var VERSION_CODE = '1.0.97';
+    </script>
+
+    <script type="text/javascript">
+        var isClient  = false;
+        var referral  = window.location.href;
+        var quantcast = true;
+
+        if(referral && referral.search('poki') > -1){
+            quantcast = false;
+        }
+
+        //try to reach localStorage
+        try{
+            var wasClient = window.localStorage.getItem('client_version');
+
+            if(wasClient){
+                isClient = true;
+            }
+        }catch(e){
+            //not available
+        }
+
+        if(referral.search('client_version') > -1){
+            isClient = true;
+            window.localStorage.setItem('client_version', 'TRUE');
+        }
+
+        if(!isClient){
+            //load poki SDK
+            var pokiScript = document.createElement('script');
+                pokiScript.src = '//game-cdn.poki.com/scripts/v2/poki-sdk.js';
+
+                pokiScript.onload = function(){
+                    //load provider
+                    var providerScript = document.createElement('script');
+                        providerScript.src = 'provider.js?v=' + VERSION_CODE;
+
+                    document.head.appendChild(providerScript);
+                };
+
+            document.head.appendChild(pokiScript);
+        }
+    </script><script src="//game-cdn.poki.com/scripts/v2/poki-sdk.js"></script>
+
+    <script type="text/javascript" src="adblock.js"></script>
+    <script src="playcanvas-stable.min.js?v=1.0.97"></script>
+    <script src="__settings__.js"></script>
+
+    <!-- Quantcast Choice. Consent Manager Tag v2.0 (for TCF 2.0) -->
+    <script type="text/javascript" async="true">
+        if(!isClient && quantcast){
+            (function() {
+            var host = window.location.hostname;
+            var element = document.createElement('script');
+            var firstScript = document.getElementsByTagName('script')[0];
+            var url = 'https://quantcast.mgr.consensu.org'
+              .concat('/choice/', 'VzKDgYuw-1KTr', '/', host, '/choice.js')
+            var uspTries = 0;
+            var uspTriesLimit = 3;
+            element.async = true;
+            element.type = 'text/javascript';
+            element.src = url;
+
+            firstScript.parentNode.insertBefore(element, firstScript);
+
+            function makeStub() {
+              var TCF_LOCATOR_NAME = '__tcfapiLocator';
+              var queue = [];
+              var win = window;
+              var cmpFrame;
+
+              function addFrame() {
+                var doc = win.document;
+                var otherCMP = !!(win.frames[TCF_LOCATOR_NAME]);
+
+                if (!otherCMP) {
+                  if (doc.body) {
+                    var iframe = doc.createElement('iframe');
+
+                    iframe.style.cssText = 'display:none';
+                    iframe.name = TCF_LOCATOR_NAME;
+                    doc.body.appendChild(iframe);
+                  } else {
+                    setTimeout(addFrame, 5);
+                  }
+                }
+                return !otherCMP;
+              }
+
+              function tcfAPIHandler() {
+                var gdprApplies;
+                var args = arguments;
+
+                if (!args.length) {
+                  return queue;
+                } else if (args[0] === 'setGdprApplies') {
+                  if (
+                    args.length > 3 &&
+                    args[2] === 2 &&
+                    typeof args[3] === 'boolean'
+                  ) {
+                    gdprApplies = args[3];
+                    if (typeof args[2] === 'function') {
+                      args[2]('set', true);
+                    }
+                  }
+                } else if (args[0] === 'ping') {
+                  var retr = {
+                    gdprApplies: gdprApplies,
+                    cmpLoaded: false,
+                    cmpStatus: 'stub'
+                  };
+
+                  if (typeof args[2] === 'function') {
+                    args[2](retr);
+                  }
+                } else {
+                  queue.push(args);
+                }
+              }
+
+              function postMessageEventHandler(event) {
+                var msgIsString = typeof event.data === 'string';
+                var json = {};
+
+                try {
+                  if (msgIsString) {
+                    json = JSON.parse(event.data);
+                  } else {
+                    json = event.data;
+                  }
+                } catch (ignore) {}
+
+                var payload = json.__tcfapiCall;
+
+                if (payload) {
+                  window.__tcfapi(
+                    payload.command,
+                    payload.version,
+                    function(retValue, success) {
+                      var returnMsg = {
+                        __tcfapiReturn: {
+                          returnValue: retValue,
+                          success: success,
+                          callId: payload.callId
+                        }
+                      };
+                      if (msgIsString) {
+                        returnMsg = JSON.stringify(returnMsg);
+                      }
+                      if (event && event.source && event.source.postMessage) {
+                        event.source.postMessage(returnMsg, '*');
+                      }
+                    },
+                    payload.parameter
+                  );
+                }
+              }
+
+              while (win) {
+                try {
+                  if (win.frames[TCF_LOCATOR_NAME]) {
+                    cmpFrame = win;
+                    break;
+                  }
+                } catch (ignore) {}
+
+                if (win === window.top) {
+                  break;
+                }
+                win = win.parent;
+              }
+              if (!cmpFrame) {
+                addFrame();
+                win.__tcfapi = tcfAPIHandler;
+                win.addEventListener('message', postMessageEventHandler, false);
+              }
+            };
+
+            makeStub();
+
+            var uspStubFunction = function() {
+              var arg = arguments;
+              if (typeof window.__uspapi !== uspStubFunction) {
+                setTimeout(function() {
+                  if (typeof window.__uspapi !== 'undefined') {
+                    window.__uspapi.apply(window.__uspapi, arg);
+                  }
+                }, 500);
+              }
+            };
+
+            var checkIfUspIsReady = function() {
+              uspTries++;
+              if (window.__uspapi === uspStubFunction && uspTries < uspTriesLimit) {
+                console.warn('USP is not accessible');
+              } else {
+                clearInterval(uspInterval);
+              }
+            };
+
+            if (typeof window.__uspapi === 'undefined') {
+              window.__uspapi = uspStubFunction;
+              var uspInterval = setInterval(checkIfUspIsReady, 6000);
+            }
+            })();
+        }
+    </script>
+    <!-- End Quantcast Choice. Consent Manager Tag v2.0 (for TCF 2.0) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org/",
+        "@type": ["VideoGame", "Game"],
+        "name": "Venge.io",
+        "gameLocation": "http://venge.io/",
+        "url": "https://venge.io/",
+        "publisher": "Poki",
+        "inLanguage": "English",
+        "image": "https://venge.io/Thumbnail-001.jpg",
+        "genre": ["Action Shooter", "3D", "io game", "FPS"],
+        "gamePlatform": ["Browser", "PC Client"],
+        "author": {
+          "@type": "Organization",
+          "name": "Onrush Studio",
+          "url": "https://onrush.studio/",
+          "foundingDate": "2018",
+          "founder": "Cem Demir"
+        },
+        "description": "A fast paced, character based action First Person Shooter with customizable weapon loadout system, playable heroes with special abilities, fully moddable standalone client, several maps and custom games to play on and many more features.
+        Play and test your strenght across several official mythologically inspired maps and thousands of custom games made with built-in map editor.
+        Find your path in this easy to play, hard to master arena shooter.
+        Gain points and VG with doing quests, in-game challenges, daily rewards, tournaments, and of course, kills. In addition, customize your experience in highly customizable controls and user interface, you can get your place in leaderboards, build your clan and fight as a team, easily invite friends and add them to your friends list, make your own weapon skin and submit to our Discord server, make your own custom map and play it with your friends, sell your items in player market, earn VG and; buy new characters weapon skins, character skins, charms, emotes and sprays. ",
+        "playMode" : "MultiPlayer",
+        "director" : "Cem Demir"
+      }
+    </script>
+<script async="" src="https://static.venge.io/files/assets/31040882/1/ammo.wasm.js"></script><style type="text/css">body {
+-webkit-touch-callout: none;
+  -webkit-user-select: none;
+   -khtml-user-select: none;
+     -moz-user-select: moz-none;
+      -ms-user-select: none;
+       -o-user-select: none;
+          user-select: none;
+-webkit-touch-callout: default;
+  -webkit-user-select: text;
+   -khtml-user-select: text;
+     -moz-user-select: text;
+      -ms-user-select: text;
+       -o-user-select: text;
+          user-select: text;
+}
+*:not(input):not(textarea){
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+}
+input:disabled, textarea:disabled, 
+input:disabled::placeholder, textarea:disabled::placeholder{
+    -webkit-text-fill-color: currentcolor;
+    opacity: 1;
+}
+#application-splash-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: url("https://venge.io/Thumbnail-002.jpg?v=1.0.1") #191919 no-repeat center center;
+    background-size: cover;
+}
+#background-video {
+    width:100%;
+    height:100%;
+    position:fixed;
+    left:0px;
+    top:0px;
+    object-fit:cover;
+    opacity:0.2;
+    z-index:1;
+}
+#application-splash {
+    position: absolute;
+    top: 7vh;
+    width: 300px;
+    left: 3vw;
+    z-index:5;
+}
+#application-splash img {
+    width: 100%;
+}
+#footer {
+    position: fixed;
+    bottom: 3.5vh;
+    color: #fff;
+    text-align: center;
+    font-size: 1.5vw;
+    font-family: monospace;
+    right: 1.2vw;
+}
+#description {
+    position: absolute;
+    bottom: 6vh;
+    left: 2vw;
+    padding: 10px 5px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.05);
+    color: #fff;
+    width: 400px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+#progress-bar-container {
+    margin-top: 20px;
+    height: 10px;
+    width: calc(100% - 4vw);
+    position: fixed;
+    left: 2vw;
+    bottom: 2vh;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+#animated-loading-image-1 {
+    height: 50vh;
+    left: 0px;
+    opacity: 0;
+    bottom: 0px;
+    position: absolute;
+    animation-name: loading-image-1;
+    animation-duration: 6s;
+    animation-fill-mode: bubble 1.0s forwards;
+}
+@keyframes loading-image-1 {
+    from { opacity : 0; left : 0px; }
+    to { opacity : 1; left : 30px; }
+}
+#animated-loading-image-2 {
+    height: 20vh;
+    right: 30px;
+    bottom: 0px;
+    opacity: 0;
+    position: absolute;
+    animation-name: loading-image-2;
+    animation-duration: 1s;
+    animation-delay: 2s;
+    animation-fill-mode: bubble 1.0s forwards;
+}
+@keyframes loading-image-2 {
+    from { opacity : 0; right : -300px; }
+    to { opacity : 1; right : 30px; }
+}
+button {
+    background-color: #4f237c;
+    border: none;
+    border-radius: 0.2vw;
+    color: #fff;
+    box-shadow: 0px 0.05vw 0.2vw rgba(0, 0, 0, 0.4);
+    padding: 0.4vw 0.9vw !important;
+    font-size: 0.8vw;
+    border-top: solid 1px rgba(255, 255, 255, 0.1);
+    cursor:pointer;
+    outline:none;
+    white-space: nowrap;
+}
+#progress-bar {
+    width: 0%;
+    height: 100%;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 60px #ffffff;
+}
+@media (max-width: 480px) {
+    #application-splash {
+        width: 170px;
+        left: calc(50% - 85px);
+    }
+}
+.cls-1 {
+   stroke-width: 5;
+}
+@keyframes dash {
+   from {
+       stroke-dashoffset: 1000;
+   }
+   to {
+       stroke-dashoffset: 0;
+   }
+}@media screen and (min-aspect-ratio: 1280/720) {    #application-canvas.fill-mode-KEEP_ASPECT {        width: auto;        height: 100%;        margin: 0 auto;    }}</style><script src="https://game-cdn.poki.com/scripts/v2.232.1/poki-sdk-core-v2.232.1.js" type="text/javascript" crossorigin="anonymous"></script><script src="provider.js?v=1.0.97"></script><style type="text/css"> .qc-cmp-button.qc-cmp-secondary-button:hover {    background-color: #368bd6 !important;    border-color: transparent !important;  }  .qc-cmp-button.qc-cmp-secondary-button:hover {    color: #ffffff !important;  }  .qc-cmp-button.qc-cmp-secondary-button {    color: #368bd6 !important;  }  .qc-cmp-button.qc-cmp-secondary-button {    background-color: #eee !important;    border-color: transparent !important;  } </style><script type="text/javascript" async="" src="https://imasdk.googleapis.com/js/sdkloader/ima3.js"></script><script type="text/javascript" async="" src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script><script type="text/javascript" async="" src="https://a.poki.com/prebid/prebid5.19.0.js"></script><script type="text/javascript" async="" src="https://c.amazon-adsystem.com/aax2/apstag.js"></script><meta http-equiv="origin-trial" content="AxujKG9INjsZ8/gUq8+dTruNvk7RjZQ1oFhhgQbcTJKDnZfbzSTE81wvC2Hzaf3TW4avA76LTZEMdiedF1vIbA4AAABueyJvcmlnaW4iOiJodHRwczovL2ltYXNkay5nb29nbGVhcGlzLmNvbTo0NDMiLCJmZWF0dXJlIjoiVHJ1c3RUb2tlbnMiLCJleHBpcnkiOjE2NTI3NzQ0MDAsImlzVGhpcmRQYXJ0eSI6dHJ1ZX0="><meta http-equiv="origin-trial" content="Azuce85ORtSnWe1MZDTv68qpaW3iHyfL9YbLRy0cwcCZwVnePnOmkUJlG8HGikmOwhZU22dElCcfrfX2HhrBPAkAAAB7eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiVHJ1c3RUb2tlbnMiLCJleHBpcnkiOjE2NTI3NzQ0MDAsImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A16nvcdeoOAqrJcmjLRpl1I6f3McDD8EfofAYTt/P/H4/AWwB99nxiPp6kA0fXoiZav908Z8etuL16laFPUdfQsAAACBeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXRhZ3NlcnZpY2VzLmNvbTo0NDMiLCJmZWF0dXJlIjoiVHJ1c3RUb2tlbnMiLCJleHBpcnkiOjE2NTI3NzQ0MDAsImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="AxBHdr0J44vFBQtZUqX9sjiqf5yWZ/OcHRcRMN3H9TH+t90V/j3ENW6C8+igBZFXMJ7G3Pr8Dd13632aLng42wgAAACBeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiVHJ1c3RUb2tlbnMiLCJleHBpcnkiOjE2NTI3NzQ0MDAsImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A88BWHFjcawUfKU3lIejLoryXoyjooBXLgWmGh+hNcqMK44cugvsI5YZbNarYvi3roc1fYbHA1AVbhAtuHZflgEAAAB2eyJvcmlnaW4iOiJodHRwczovL2dvb2dsZS5jb206NDQzIiwiZmVhdHVyZSI6IlRydXN0VG9rZW5zIiwiZXhwaXJ5IjoxNjUyNzc0NDAwLCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><meta http-equiv="origin-trial" content="A/OOU4XAFfeAV4kM4+W9WBwNAHqq/bvtrRcJ1wpnNyO/i076BSUy1d14l2kBEgVmEuvxojSpD23172C6hBg2AQYAAACWeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiQ29udmVyc2lvbk1lYXN1cmVtZW50IiwiZXhwaXJ5IjoxNjM0MDgzMTk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlLCJ1c2FnZSI6InN1YnNldCJ9"><meta http-equiv="origin-trial" content="AwrB+XVH/KV6HfZNVtSEqlUJi3yUbtCp0/TJRj+38NDIw19/9P1h7ECTtdLdhIzG0Bsl4n/0rVmttJtGUCcewgAAAACceyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiQ29udmVyc2lvbk1lYXN1cmVtZW50IiwiZXhwaXJ5IjoxNjM0MDgzMTk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlLCJ1c2FnZSI6InN1YnNldCJ9"><meta http-equiv="origin-trial" content="Ax15QOERqai2A5XWrDY38Eg07xh2T0pkhpDPJuDlxr7D2Ka8wHvklgK7tTPZOnT+8H31lwHto5JpvYV8jRn1WgIAAACceyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXRhZ3NlcnZpY2VzLmNvbTo0NDMiLCJmZWF0dXJlIjoiQ29udmVyc2lvbk1lYXN1cmVtZW50IiwiZXhwaXJ5IjoxNjM0MDgzMTk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlLCJ1c2FnZSI6InN1YnNldCJ9"><script src="https://securepubads.g.doubleclick.net/gpt/pubads_impl_2021102601.js?31063319" async=""></script><style>
+.pokiSdkContainer {
+	overflow: hidden;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1000;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.pokiSdkContainer.pokiSdkFixed {
+	position: fixed;
+}
+
+.pokiSdkContainer.pokiSdkVisible {
+	display: block;
+}
+
+.pokiSdkContainer.pokiSdkHidden,
+.pokiSdkSpinnerContainer.pokiSdkHidden {
+	display: none;
+}
+
+.pokiSdkContainer.pokiSdkHidden,
+.pokiSdkSpinnerContainer {
+	pointer-events: none;
+}
+
+.pokiSdkSpinnerContainer {
+	z-index: 10;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: url('https://a.poki.com/images/thumb_anim_2x.gif') 50% 50% no-repeat;
+	user-select: none;
+}
+
+.pokiSdkInsideContainer {
+	background: #000;
+	position: relative;
+	z-index: 1;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+
+	opacity: 0;
+	-webkit-transition: opacity 0.5s ease-in-out;
+	-moz-transition: opacity 0.5s ease-in-out;
+	-ms-transition: opacity 0.5s ease-in-out;
+	-o-transition: opacity 0.5s ease-in-out;
+	transition: opacity 0.5s ease-in-out;
+}
+
+.pokiSdkContainer.pokiSdkVisible .pokiSdkInsideContainer {
+	opacity: 1;
+}
+
+.pokiSDKAdContainer, .pokiSdkVideoContainer {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+
+.pokiSdkStartAdButton {
+	position: absolute;
+	z-index: 9999;
+	top: 0;
+
+	padding-top: 10%;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	color: #FFF;
+
+	font: 700 15pt 'Arial', sans-serif;
+	font-weight: bold;
+	letter-spacing: 1px;
+	transition: 0.1s ease-in-out;
+	line-height: 1em;
+}
+
+.pokiSdkPauseButton {
+	cursor:pointer;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+}
+
+.pokiSdkPauseButton:before {
+	content: '';
+	position: absolute;
+	width: 100px;
+	height: 100px;
+	display: block;
+	border: 2px solid #fff;
+	border-radius: 50%;
+	user-select: none;
+	background-color: rgba(0, 0, 0, 0.6);
+	transition: background-color 0.5s ease;
+	animation: 1s linear infinite pulse;
+}
+
+.pokiSdkPauseButton:after {
+	content: '';
+	position: absolute;
+	display: block;
+	box-sizing: border-box;
+	border-color: transparent transparent transparent #fff;
+	border-style: solid;
+	border-width: 26px 0 26px 40px;
+	pointer-events: none;
+	animation: 1s linear infinite pulse;
+	left: 6px;
+}
+.pokiSdkPauseButtonBG {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: block;
+    content: '';
+    background: rgba(0, 43, 80, 0.5);
+    width: 100%;
+    height: 100%;
+}
+
+.pokiSdkPauseButtonBG:hover{
+	background: rgba(0, 43, 80, 0.7);
+}
+
+@keyframes pulse {
+	0% {
+		transform: translate(-50%, -50%) scale(0.95);
+	}
+	70% {
+		transform: translate(-50%, -50%) scale(1.1);
+	}
+	100% {
+		transform: translate(-50%, -50%) scale(0.95);
+	}
+}
+
+.pokiSdkProgressContainer {
+	background: #B8C7DD;
+	width: 100%;
+	height: 5px;
+	position: absolute;
+	bottom: 0;
+	z-index: 9999;
+}
+
+.pokiSdkProgressBar {
+	position:relative;
+	bottom:0px;
+	background: #FFDC00;
+	height: 100%;
+	width: 0%;
+	transition: width 0.5s;
+	transition-timing-function: linear;
+}
+
+.pokiSdkProgressBar.pokiSdkVisible, .pokiSdkPauseButton.pokiSdkVisible, .pokiSdkStartAdButton.pokiSdkVisible {
+	display: block;
+	pointer-events: auto;
+}
+
+.pokiSdkProgressBar.pokiSdkHidden, .pokiSdkPauseButton.pokiSdkHidden, .pokiSdkStartAdButton.pokiSdkHidden {
+	display: none;
+	pointer-events: none;
+}
+</style><meta http-equiv="origin-trial" content="A6dSOSzoi1aNYF7wzABssAfbTwix4UuX9i/Po1+B23zTpFu7gPtrnSw6cJCueZRxs/ToGgl4b9QmtrEtc6EP2wUAAACJeyJvcmlnaW4iOiJodHRwczovL2ltYXNkay5nb29nbGVhcGlzLmNvbTo0NDMiLCJmZWF0dXJlIjoiQ29udmVyc2lvbk1lYXN1cmVtZW50IiwiZXhwaXJ5IjoxNjM0MDgzMTk5LCJpc1RoaXJkUGFydHkiOnRydWUsInVzYWdlIjoic3Vic2V0In0="><script src="__game-scripts.js?v=9ad1f6"></script><link rel="preload" href="https://adservice.google.com.ar/adsid/integrator.js?domain=venge.io" as="script"><script type="text/javascript" src="https://adservice.google.com.ar/adsid/integrator.js?domain=venge.io"></script><link rel="preload" href="https://adservice.google.com/adsid/integrator.js?domain=venge.io" as="script"><script type="text/javascript" src="https://adservice.google.com/adsid/integrator.js?domain=venge.io"></script></head>
+<body>
+    <script src="__modules__.js"></script>
+    <script src="__start__.js"></script><canvas id="application-canvas" tabindex="0" width="1728" height="342" style="width: 1920px; height: 380px;" class="fill-mode-FILL_WINDOW"></canvas>
+    <script src="__loading__.js?v=2.0.2"></script>
+
+    <div id="preroll"></div>
+
+    <div id="about" style="display: none;">
+        <p>Venge.io is an online shooter where you will be playing against real players from all around the world in an arena. There are several weapons to choose from such as Scar, Shotgun, Tec-9 and even a Sniper rifle!</p>
+
+        <p>You must find the green areas on the map and capture that area before your opponents do. By capturing the area you will receive special skill cards that you can use, to improve your equipment and make you stronger.</p>
+
+        <p>Play different heroes, with different weapons! Create your own games, or join any community made game instantly!</p>
+
+        <a href="https://venge.io/tos.txt" target="_blank">Read TOS</a>
+        <a href="https://social.venge.io/client.html" target="_blank">Download Windows Client</a>
+    </div>
+
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-56170709-45"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-56170709-45');
+    </script><iframe src="https://7e27297165a611aed347e828a7ec9600.safeframe.googlesyndication.com/safeframe/1-0-38/html/container.html" style="visibility: hidden; display: none;"></iframe>
+
+
+<iframe style="display: none;" name="__tcfapiLocator"></iframe><div class="pokiSdkContainer pokiSdkHidden pokiSdkFixed"><div class="pokiSdkInsideContainer"><div class="pokiSdkProgressContainer pokiSdkHidden"><div class="pokiSdkProgressBar" style="width: 0%;"></div></div><video id="pokiSDKVideoContainer" class="pokiSdkVideoContainer" playsinline="playsinline" muted="muted"></video><div id="pokiSDKAdContainer" class="pokiSDKAdContainer"><div style="position: absolute;"><div style="display: none;"><lima-video style="background-color: rgb(0, 0, 0); height: 100%; width: 100%; position: absolute; left: 0px; top: 0px;" webkit-playsinline="true" playsinline="true"></lima-video><div style="position: absolute; width: 100%; height: 100%; left: 0px; top: 0px;"></div></div><div style="display: none;"><lima-video style="background-color: rgb(0, 0, 0); height: 100%; width: 100%; position: absolute; left: 0px; top: 0px;" webkit-playsinline="true" playsinline="true"></lima-video><div style="position: absolute; width: 100%; height: 100%; left: 0px; top: 0px;"></div></div><iframe src="https://imasdk.googleapis.com/js/core/bridge3.487.0_en.html#goog_1929163294" allowfullscreen="" allow="autoplay;trust-token-redemption;attribution-reporting;" id="goog_1929163294" style="border: 0px none; opacity: 0; margin: 0px; padding: 0px; position: relative;"></iframe><iframe sandbox="allow-scripts allow-same-origin" style="display: none;"></iframe></div></div></div><div class="pokiSdkSpinnerContainer"></div><div class="pokiSdkPauseButton pokiSdkHidden"><div class="pokiSdkPauseButtonBG"></div></div><div class="pokiSdkStartAdButton pokiSdkHidden">Tap anywhere to play ad</div></div><style>#wrapper-shadow{
+	width: 100%;
+	height: 100%;
+	left: 0px;
+	top: 0px;
+	position: fixed;
+	background: rgba(0, 0, 0, 0.3);
+	font-family: Arial, sans-serif;
+	user-select: none;
+	z-index: 1000;
+}
+
+#sidebar{
+	width: 350px;
+	height: 100%;
+	right: -300px;
+	position: fixed;
+	background: #1c2025;
+	box-shadow: 10px 0px 30px #000000;
+	top: 0px;
+	transition: all 0.15s ease-out;
+	opacity: 0;
+    z-index:100;
+}
+
+#sidebar.active{
+	opacity: 1;
+	right: 0px;
+}
+
+#sidebar li{
+	list-style: none;
+	color: #fff;
+	padding: 15px 25px;
+	border-bottom: solid 1px #2c333a;
+	background: #20262b;
+	box-shadow: inset 0px 5px 10px #1d2325;
+	border-left: solid 3px #20272a;
+}
+
+#sidebar li.online{
+	border-left: solid 3px #49de06;
+}
+
+.status{
+	width: 12px;
+	height: 12px;
+	border-radius: 50px;
+	float: left;
+	background: #ccc;
+	margin-right: 15px;
+	margin-top: 2px;
+}
+
+.status.online{
+	background: #49de00;
+	box-shadow: 0px 0px 10px #91ff00;
+}
+
+#title{
+	margin: 0px;
+	font-size: 16px;
+	text-transform: uppercase;
+	padding-bottom: 10px;
+	/* margin-left: -10px; */
+	/* margin-right: -20px; */
+	padding-left: 25px;
+	/* margin-top: -20px; */
+	background: #434a53;
+	padding-top: 10px;
+	color: #fff;
+	border-left: solid 3px #b9bbbd;
+}
+
+#close{
+	/* float: right; */
+	background: #474f56;
+	color: #fff;
+	cursor: pointer;
+	position: fixed;
+	right: 0px;
+	top: 0px;
+	height: 38px;
+	width: 50px;
+	text-align: center;
+	font-size: 21px;
+	line-height: 34px;
+	text-shadow: 0px 0px 1px #fff;
+}
+
+#chat-close{
+	float: right;
+	width: 40px;
+	background: #45585f;
+	cursor: pointer;
+	text-align: center;
+	line-height: 40px;
+	color: #fff;
+	height: 39px;
+	margin-top: -8px;
+	margin-right: -20px;
+	font-size: 22px;
+	text-shadow: none;
+}
+
+.invite-button{
+	background: #007bce;
+	color: white;
+	float: right;
+	padding: 5px 12px;
+	border: none;
+	border-radius: 3px;
+	margin-top: -7px;
+	font-size: 15px;
+	border-top: solid 1px #25a6ff;
+	border-bottom: solid 1px #103b58;
+	cursor: pointer;
+	margin-right: -15px;
+	line-height: 21px;
+	font-weight: bold;
+	margin-left: 20px;
+}
+
+.chat-button{
+	background: #666;
+	border-top: solid 1px #828282;
+	padding-right: 6px;
+}
+
+#footer-description{
+position: absolute;
+    bottom: 40px;
+    height: 13px;
+    width: 100%;
+    background: #000;
+    color: #fff;
+    text-align: center;
+    font-size: 12px;
+    padding: 10px;
+}
+
+#footer{
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+	width: 100%;
+	background: #fff;
+	height: 40px;
+}
+
+#footer select{
+	height: 40px;
+	border: 0px;
+	width: 100%;
+	padding: 0px 20px;
+	font-size: 15px;
+	background: #44772c;
+	color: #fff;
+	box-shadow: inset 0px 5px 10px #4c8c2d;
+	cursor: pointer;
+	outline: none;
+}
+
+#footer select.offline{
+	background: #666;
+	box-shadow: inset 0px 5px 10px #333;
+}
+
+#notification-holder{
+	top: 110px;
+	position: fixed;
+	left: 0px;
+	z-index: 1001;
+}
+
+.invite-notification{
+	background: #272727;
+	padding: 10px 20px;
+	left: -320px;
+	opacity: 0;
+	margin-bottom: 20px;
+	color: #fff;
+	position: relative;
+	line-height: 26px;
+	font-family: Arial, sans-serif;
+	border-radius: 4px;
+	box-shadow: 0px 0px 10px #2f2f2f;
+	border-left: solid 4px #49de06;
+	transition: all 0.15s ease-out;
+	height: 26px;
+	user-select: none;
+	cursor: pointer;
+}
+
+.invite-notification.active{
+	left: 20px;
+	opacity: 1;
+}
+
+.invite-notification .invite-button{
+	margin-top: -3px;
+	margin-right: -13px;
+	margin-bottom: 0px;
+	font-size: 15px;
+	font-weight: bold;
+	height: 33px;
+	line-height: 20px;
+	margin-left: 30px;
+}
+
+.player-status{
+	float: right;
+	font-size: 11px;
+	margin-top: 3px;
+	color: #49de06;
+	width: 100px;
+	text-align: right;
+}
+
+.invite-notification .cancel-button{
+	margin-top: -3px;
+	margin-left: 21px;
+	margin-bottom: 0px;
+	font-size: 15px;
+	font-weight: bold;
+	height: 33px;
+	line-height: 20px;
+	background: #d6491c;
+	border-top: solid 1px #ff815a;
+	border-bottom: solid 1px #8a381f;
+}
+
+.invite-notification .status{
+	margin-top: 7px;
+}
+
+#add-friend{
+	width: 100%;
+	background: #121517;
+	padding: 10px 20px;
+	border: none;
+	border-left: solid 3px #ababab;
+	font-size: 15px;
+	outline: none;
+	color: #fff;
+	cursor: pointer;
+}
+
+#player-holder{
+	height: calc(100% - 140px);
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+#online-counter{
+	margin-left: 10px;
+	color: #989898;
+}
+
+#chat-panel{
+	position: absolute;
+	right: 380px;
+	top: 30px;
+	background: #2b2b2b;
+	box-shadow: 0px 0px 10px #232323;
+	width: 500px;
+	height: 292px;
+	border-radius: 3px;
+	overflow: hidden;
+}
+
+#chat-title{
+	height: 39px;
+	width: 100%;
+	background: #3b4a50;
+	color: #fff;
+	font-weight: bold;
+	font-size: 14px;
+	line-height: 25px;
+	padding: 8px 20px;
+	box-sizing: border-box;
+	text-shadow: 0px 1px 1px #000000;
+	/* text-transform: uppercase; */
+}
+
+#chat-messages{
+	width: 100%;
+	height: 210px;
+	border-bottom: solid 1px #565656;
+	overflow-y: auto;
+	overflow-x: hidden;
+	word-break: break-all;
+	padding: 20px;
+	box-sizing: border-box;
+	color: #fff;
+}
+
+#chat-messages li{
+	list-style: none;
+}
+
+#chat-messages li.me{
+	color: #49de06;
+}
+
+#chat-input-box{
+	height: 40px;
+	width: 100%;
+	border: none;
+	box-sizing: border-box;
+	padding: 10px 20px;
+	color: #fff;
+	background: #272727;
+	outline: none;
+	font-size: 16px;
+	box-shadow: inset 0px 5px 10px #1d1d1d;
+}
+
+#empty-warning{
+    width: 100%;
+    height:300px;
+    padding-top:30px;
+    color:#fff;
+    text-align:center;
+}</style><a style="width: 225px; height: 135px; position: absolute; overflow: hidden; left: 657.632px; bottom: 270.877px; display: block; z-index: 1000; transform: scale(0.456464); transform-origin: left bottom 0px;" id="Streamer" class="container" href="https://www.twitch.tv/thefredexx" target="_blank"></a><a style="width: 145px; height: 50px; position: absolute; overflow: hidden; left: 1143.3px; bottom: 345.694px; display: block; z-index: 1000; transform: scale(0.527778); transform-origin: left bottom 0px;" id="Leaderboard" class="container" href="https://social.venge.io/" target="_blank"></a><a style="width: 160px; height: 40px; position: absolute; overflow: hidden; left: 628.392px; bottom: 10.5556px; display: block; z-index: 1000; transform: scale(0.527778); transform-origin: left bottom 0px;" id="Discord" class="container" href="https://discord.gg/venge" target="_blank"></a><a style="width: 40px; height: 40px; position: absolute; overflow: hidden; left: 739.226px; bottom: 10.5556px; display: block; z-index: 1000; transform: scale(0.527778); transform-origin: left bottom 0px;" id="Poki" class="container" href="https://poki.com" target="_blank"></a><a style="width: 40px; height: 40px; position: absolute; overflow: hidden; left: 715.476px; bottom: 10.5556px; display: block; z-index: 1000; transform: scale(0.527778); transform-origin: left bottom 0px;" id="Twitter" class="container" href="https://twitter.com/vengeio" target="_blank"></a><div style="width: 728px; height: 90px; position: absolute; left: 20.3068px; bottom: 14.6223px; display: block; z-index: 1000; transform: scale(0.406679); transform-origin: left bottom 0px;" id="venge-io_728x90" class="container" data-poki-ad-id="poki-YYAm3r8KdUlEvocC2Vy2gw"><div style="width: 728px; height: 90px; background: rgb(204, 204, 204) none repeat scroll 0% 0%; display: flex; justify-content: center; align-items: center; position: absolute; z-index: 1; font-family: Helvetica; font-size: 16px; color: rgb(136, 136, 136); pointer-events: none;"><p>ADVERTISEMENT</p></div><div id="poki-YYAm3r8KdUlEvocC2Vy2gw" class="poki-ad-slot" style="width: 728px; height: 90px; position: relative; z-index: 2;" data-poki-ad-size="728x90" data-google-query-id="CMH78Ynb9_MCFU-WlQIdceIAzA"><div id="google_ads_iframe_/21682198607/external_desktop_display_ingame/external_desktop_ingame_728x90_0__container__" style="border: 0pt none;"><iframe id="google_ads_iframe_/21682198607/external_desktop_display_ingame/external_desktop_ingame_728x90_0" title="3rd party ad content" name="google_ads_iframe_/21682198607/external_desktop_display_ingame/external_desktop_ingame_728x90_0" scrolling="no" marginwidth="0" marginheight="0" style="border: 0px none; vertical-align: bottom;" srcdoc="" data-google-container-id="1" data-load-complete="true" width="728" height="90" frameborder="0"></iframe></div></div></div><style>#popup-shadow{
+    position:fixed;
+    left:0px;
+    top:0px;
+    background:rgba(0, 0, 0, 0.9);
+    width:100%;
+    height:100%;
+    z-index: 2000;
+    display:none;
+}
+
+#modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  height: 600px;
+  display: flex;
+  user-select: none;
+  font-family: Arial, sans-serif;
+  flex-direction: column;
+  z-index: 1000;
+}
+
+#popup-shadow.active {
+    display:block;
+}
+/* navbar top */
+#navbar {
+  height: 60px;
+  display: flex;
+  justify-content: space-evenly;
+  background-color: #25242d;
+}
+#navbar > *:nth-child(1) {
+  flex: 1 1 100%;
+}
+#navbar > *:nth-child(2) {
+  flex: 1 1 100%;
+}
+#loginSignupContainer {
+  display: flex;
+  height: 100%;
+  align-items: center;
+}
+#loginSignupContainer > *:nth-child(1) {
+  flex: 1 1 100%;
+}
+#loginSignupContainer > *:nth-child(2) {
+  flex: 1 1 100%;
+}
+#navbarContainer {
+  background-color: transparent;
+  height: inherit;
+}
+#closeBtnContainer {
+  background-color: transparent;
+  display: flex;
+  justify-content: flex-end;
+}
+#navbarUL {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  display: flex;
+  height: 100%;
+  align-items: center;
+}
+#navbarLoginBtn {
+  margin-left: 50px;
+  padding: 0 27px;
+  background-color: #000000;
+  align-items: center;
+  justify-content: center;
+  transform: skewX(-20deg);
+  cursor: pointer;
+}
+#navbarLoginBtn > p {
+  text-transform: uppercase;
+  transform: skewX(20deg);
+  color: white;
+  font-size: 20px;
+}
+#navbarLoginBtn.inactive {
+  background-color: transparent;
+}
+#navbarSignupBtn {
+  margin-left: 5px;
+  padding: 0 20px;
+  background-color: #000000;
+  transform: skewX(-20deg);
+  cursor: pointer;
+}
+#navbarSignupBtn.inactive {
+  background-color: transparent;
+}
+#navbarSignupBtn > p {
+  text-transform: uppercase;
+  transform: skewX(20deg);
+  color: white;
+  font-size: 20px;
+}
+#modal-close-button {
+  color: white;
+  font-size: 3rem;
+  cursor: pointer;
+  margin-right: 10px;
+  border: none;
+  background: none;
+  outline: none;
+    box-shadow:none;
+}
+/* login modal */
+#modal-login {
+  display: block;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  background: #1c2025;
+  color: white;
+}
+
+#modal-login.inactive {
+  display: none;
+}
+#modal-login-info {
+  display: flex;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+#modal-login-info.active {
+  display: none;
+}
+#modal-login-text {
+  font-size: 14px;
+  background-color: #14171f;
+  padding: 10px;
+}
+#modal-login-body {
+  margin-top: 50px;
+  align-items: center;
+}
+#login-Form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: 150px;
+}
+#modal-login-username-container {
+  padding: 10px 10px 10px 0px;
+  width: 1000px;
+  display: flex;
+}
+#modal-login-username-container > #login_username {
+  background-color: #d4d4d4;
+  padding: 10px;
+  font-size: 20px;
+  flex: 0 1 40%;
+  margin-left: 50px;
+  width: 400px;
+}
+#modal-login-username-container > p {
+  font-size: 20px;
+  flex: 0 1 30%;
+  text-align: center;
+}
+#login_username::placeholder {
+  font-size: 20px;
+  color: #757575;
+}
+#modal-login-password-container {
+  padding: 10px 10px 10px 0px;
+  width: 1000px;
+  display: flex;
+}
+#modal-login-password-container > #login_password {
+  background-color: #d4d4d4;
+  padding: 10px;
+  font-size: 20px;
+  flex: 0 1 40%;
+  margin-left: 50px;
+  width: 400px;
+}
+#modal-login-password-container > p {
+  font-size: 20px;
+  flex: 0 1 30%;
+  text-align: center;
+}
+#login_password::placeholder {
+  font-size: 20px;
+  color: #757575;
+}
+#modal-login-button-container {
+  margin-left: 90px;
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+}
+.login-button {
+  background-color: rgb(41, 119, 21);
+  color: white;
+  height: 50px;
+  width: 200px;
+  font-size: 20px;
+  border-radius: 8px;
+  padding-left: 20px;
+  margin-left: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+.login-button:hover {
+  background-color: #36981d;
+}
+#chevron-arrow-right {
+  display: inline-block;
+  margin-right: 20px;
+  border-right: 4px solid white;
+  border-bottom: 4px solid white;
+  width: 15px;
+  height: 15px;
+  transform: rotate(-45deg);
+}
+/* signup modal */
+#modal-signup {
+  display: none;
+}
+#modal-signup.active {
+  display: block;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  background: #1c2025;
+  color: white;
+}
+#modal-signup-info {
+  display: flex;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+#modal-signup-info.active {
+  display: none;
+}
+#modal-signup-text {
+  font-size: 14px;
+  padding: 10px;
+  background-color: #14171f;
+}
+
+#modal-signup-body {
+  margin-top: 50px;
+  align-items: center;
+}
+#signup-Form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: 150px;
+  margin-top: 10px;
+}
+#modal-signup-username-container {
+  padding: 10px 10px 10px 0px;
+  width: 1000px;
+  display: flex;
+}
+#modal-signup-username-container > #signup_username {
+  background-color: #d4d4d4;
+  padding: 10px;
+  font-size: 20px;
+  flex: 0 1 40%;
+  margin-left: 50px;
+  width: 400px;
+}
+#modal-signup-username-container > p {
+  font-size: 20px;
+  flex: 0 1 30%;
+  text-align: center;
+}
+#signup_username::placeholder {
+  font-size: 20px;
+  color: #757575;
+}
+#modal-signup-password-container {
+  padding: 10px 10px 10px 0px;
+  width: 1000px;
+  display: flex;
+}
+#modal-signup-password-container > #signup_password {
+  background-color: #d4d4d4;
+  padding: 10px;
+  font-size: 20px;
+  flex: 0 1 40%;
+  margin-left: 50px;
+  width: 400px;
+}
+#modal-signup-password-container > p {
+  font-size: 20px;
+  flex: 0 1 30%;
+  text-align: center;
+}
+#signup_password::placeholder {
+  font-size: 20px;
+  color: #757575;
+}
+#modal-signup-button-container {
+  margin-left: 90px;
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+}
+.signup-button {
+  background-color: #0e65df;
+  color: white;
+  height: 50px;
+  width: 200px;
+  font-size: 20px;
+  border-radius: 8px;
+  padding-left: 20px;
+  margin-left: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+.signup-button:hover {
+  background-color: #2275ea;
+}
+#chevron-arrow-right {
+  display: inline-block;
+  margin-right: 20px;
+  border-right: 4px solid white;
+  border-bottom: 4px solid white;
+  width: 15px;
+  height: 15px;
+  transform: rotate(-45deg);
+}
+@media (max-width: 600px){
+    #modal{
+        height:550px;
+        width:450px;
+    }
+    #modal-login-username-container > #login_username,
+    #modal-login-password-container > #login_password,
+    #modal-signup-username-container > #signup_username,
+    #modal-signup-password-container > #signup_password   {
+        flex: unset;
+        width: 200px;
+        height: 20px;
+        margin-left: 100px;
+    }
+    #modal-login-text{
+        margin-right: 20px
+    }
+    .login-button,
+    .signup-button {
+        width: 170px;
+        margin-left: 0px;
+    }
+    #modal-login-username-container,
+    #modal-login-password-container,
+    #modal-signup-username-container,
+    #modal-signup-password-container {
+        flex: unset;
+        width: unset;
+        margin-left: -130px;
+        align-items: center;
+    }
+    #modal-signup-body  {
+        margin-top:66px;
+    }
+}
+@media (max-height: 600px){
+    #modal{
+        height:350px;
+        width:450px;
+    }
+    #modal-login-username-container > #login_username,
+    #modal-login-password-container > #login_password,
+    #modal-signup-username-container > #signup_username,
+    #modal-signup-password-container > #signup_password   {
+        flex: unset;
+        width: 200px;
+        height: 20px;
+        margin-left: 100px;
+    }
+    #modal-login-text{
+        margin-right: 20px
+    }
+    .login-button,
+    .signup-button {
+        width: 170px;
+        margin-left: 0px;
+    }
+    #modal-login-username-container,
+    #modal-login-password-container,
+    #modal-signup-username-container,
+    #modal-signup-password-container {
+        flex: unset;
+        width: unset;
+        margin-left: -130px;
+        align-items: center;
+    }
+    #modal-signup-body  {
+        margin-top:66px;
+    }
+    #navbar {
+        height: 40px;
+    }
+    #navbarLoginBtn {
+        height: 40px;
+        display: flex;
+    }
+    #navbarLoginBtn > p,##navbarSignupBtn > p {
+        margin:0px;
+    }
+    #navbarSignupBtn {
+        display: flex;
+        align-items: center;
+        height: 40px;
+    }
+    #closeBtnContainer {
+        align-items: center;
+    }
+    #modal-login-info,
+    #modal-signup-info,
+    #modal-login-username-container {
+        margin-top: 0px;
+    }
+    #modal-login-username-container,
+    #modal-signup-username-container {
+        padding: 10px 10px 0px 0px;
+    }
+    #modal-login-password-container,
+    #modal-signup-password-container {
+        padding: 0px 10px 10px 0px;
+    }
+    #modal-login-button-container,#modal-signup-button-container{
+        margin-top: 10px;
+    }
+    #modal-login-body{
+        margin-top: 10px;
+    }
+    #modal-signup-body{
+        margin-top: 26px;
+    }
+}
+@media (max-width: 800px) and (min-width: 601px){
+    #modal{
+        height:550px;
+        width:600px;
+    }
+    #modal-login-username-container > #login_username,
+    #modal-login-password-container > #login_password,
+    #modal-signup-username-container > #signup_username,
+    #modal-signup-password-container > #signup_password   {
+        flex: unset;
+        width: 300px;
+        height: 30px;
+        margin-left: 50px;
+    }
+    #modal-login-text{
+        margin-right: 20px
+    }
+    .login-button,
+    .signup-button {
+        width: 170px;
+        margin-left: 70px;
+    }
+    #modal-login-username-container,
+    #modal-login-password-container,
+    #modal-signup-username-container,
+    #modal-signup-password-container {
+        flex: unset;
+        width: unset;
+        margin-left: -130px;
+        align-items: center;
+    }
+    #modal-signup-body  {
+        margin-top:66px;
+    }
+}</style><style>/* custom css will be in this file */
+::-webkit-scrollbar {
+  width:10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background:#fff;
+  box-shadow: inset 0 0 5px #4f237c;
+  border-radius: 5px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  border:1px solid #955fcc;
+  background: #4f237c;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #955fcc; 
+}
+
+@media (max-width: 991px) {
+    /* Table */
+    table, td,
+    tr th{
+        font-size: 17px!important;
+    }
+    
+    .small-description {
+        font-size: 13px!important;
+    }
+
+    
+    button{
+        font-size:14px;
+        padding:10px!important;
+    }
+    
+    table small {
+        width: calc(100% - 5px);
+        font-size: 14px;
+        height: 25px;
+        line-height: 25px;
+    }
+    
+}
+
+.locked{
+    width: 100%;
+    height: 79%;
+    background: rgba(0, 0, 0, 0.87) url(https://venge.io/files/assets/30431086/1/Lock-Icon.png) no-repeat center center;
+    position: absolute;
+}
+</style><div id="popup-shadow"><div id="modal"><div id="navbar"><div id="navbarContainer"><ul id="navbarUL"><li id="navbarLoginBtn"><p>Login</p></li><li id="navbarSignupBtn" class="inactive"><p>Signup</p></li></ul></div><div id="closeBtnContainer"><button id="modal-close-button">×</button></div></div><div id="loginSignupContainer"><div id="modal-login"><div id="modal-login-info"><p id="modal-login-text">Enter your username and password for Login. If you dont have an account, go to "Create Account" menu.</p></div><div id="modal-login-body"><form id="login-Form"><div id="modal-login-username-container"><p>Username</p><input id="login_username" name="loginUsername" placeholder="Username" type="text"></div><div id="modal-login-password-container"><p>Password</p><input id="login_password" name="loginPassword" placeholder="Password" type="password"></div><div id="modal-login-button-container"><button class="login-button">LOGIN<div id="chevron-arrow-right"></div></button></div></form></div></div><div id="modal-signup"><div id="modal-signup-info"><p id="modal-signup-text">If you have an account already, go to "Login" menu.</p></div><div id="modal-signup-body"><form id="signup-Form"><div id="modal-signup-username-container"><p>Username</p><input id="signup_username" placeholder="Username" type="text" name="signupUsername"></div><div id="modal-signup-password-container"><p>Password</p><input id="signup_password" placeholder="Password" type="password" name="signupPassword"></div><div id="modal-signup-button-container"><button class="signup-button">SIGNUP<div id="chevron-arrow-right"></div></button></div></form></div></div></div></div></div><iframe src="https://www.google.com/recaptcha/api2/aframe" style="display: none;" width="0" height="0"></iframe></body><iframe sandbox="allow-scripts allow-same-origin" id="252d9b2a8ef1f9e" allowtransparency="true" marginheight="0" marginwidth="0" hspace="0" vspace="0" style="height:0px;width:0px;display:none;" scrolling="no" src="https://acdn.adnxs.com/dmp/async_usersync.html" width="0" height="0" frameborder="0">
+    </iframe><iframe sandbox="allow-scripts allow-same-origin" id="26036d712c5a30e" allowtransparency="true" marginheight="0" marginwidth="0" hspace="0" vspace="0" style="height:0px;width:0px;display:none;" scrolling="no" src="https://ads.pubmatic.com/AdServer/js/user_sync.html?kdntuid=1&amp;p=156838" width="0" height="0" frameborder="0">
+    </iframe><iframe sandbox="allow-scripts allow-same-origin" id="278eb72032aba91" allowtransparency="true" marginheight="0" marginwidth="0" hspace="0" vspace="0" style="height:0px;width:0px;display:none;" scrolling="no" src="https://js-sec.indexww.com/um/ixmatch.html" width="0" height="0" frameborder="0">
+    </iframe><iframe sandbox="allow-scripts allow-same-origin" id="28d555d534af0d78" allowtransparency="true" marginheight="0" marginwidth="0" hspace="0" vspace="0" style="height:0px;width:0px;display:none;" scrolling="no" src="https://onetag-sys.com/usync/?cb=1635788511296" width="0" height="0" frameborder="0">
+    </iframe><iframe sandbox="allow-scripts allow-same-origin" id="2962feff13b912e" allowtransparency="true" marginheight="0" marginwidth="0" hspace="0" vspace="0" style="height:0px;width:0px;display:none;" scrolling="no" src="https://sync.richaudience.com/dcf3528a0b8aa83634892d50e91c306e/?ord=7227165444" width="0" height="0" frameborder="0">
+    </iframe><iframe sandbox="allow-scripts allow-same-origin" id="30e9abb9bad9097" allowtransparency="true" marginheight="0" marginwidth="0" hspace="0" vspace="0" style="height:0px;width:0px;display:none;" scrolling="no" src="https://biddr.brealtime.com/check.html" width="0" height="0" frameborder="0">
+    </iframe><iframe sandbox="allow-scripts allow-same-origin" id="31fee1cdcb75a52" allowtransparency="true" marginheight="0" marginwidth="0" hspace="0" vspace="0" style="height:0px;width:0px;display:none;" scrolling="no" src="https://eus.rubiconproject.com/usync.html" width="0" height="0" frameborder="0">
+    </iframe><iframe sandbox="allow-scripts allow-same-origin" id="32385044d83df858" allowtransparency="true" marginheight="0" marginwidth="0" hspace="0" vspace="0" style="height:0px;width:0px;display:none;" scrolling="no" src="https://us-u.openx.net/w/1.0/pd?plm=6&amp;ph=4a30c1f0-d5bc-4bd9-aa8f-1bf33a9c334b&amp;gdpr=0" width="0" height="0" frameborder="0">
+    </iframe></html>
