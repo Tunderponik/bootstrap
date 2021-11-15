@@ -9,145 +9,87 @@
         <title>Conversor</title>
 </head>
 <body>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Rubik+Mono+One&family=Rubik:wght@600&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Rubik+Mono+One&family=Rubik:wght@600&display=swap');
-        body {
-            font-family: 'Rubik', Arial;
-            background: gray;
+<script>
+        let factors1 = new Array(1, 0.001, 0.000621,3.28084,1.09361);
+        let factors2 = new Array(1000, 1, 0.621,3280.84,1093.61);
+        let factors3 = new Array(1609.34, 1.60934, 1,5280,1760);
+        let factors4 = new Array(0.3048,0.0003048,0.000189394,1,0.333333);
+        let factors5 = new Array(0.9144,0.0009144,0.000568182,3,1);
+        let factors = new Array(factors1,factors2,factors3,factors4,factors5);
+
+        function convertUnit()
+        {
+
+        fromIndex = document.lengthCon.fromUnit.selectedIndex;
+        toIndex = document.lengthCon.toUnit.selectedIndex;
+        factor = factors[fromIndex][toIndex];
+
+        fromUnitText = document.lengthCon.fromUnit.options[document.lengthCon.fromUnit.selectedIndex].text;
+        toUnitText = document.lengthCon.toUnit.options[document.lengthCon.toUnit.selectedIndex].text;
+        document.getElementById("formula").innerHTML = fromUnitText + ' = ' + factor + ' ' + toUnitText;
+
+        if(isNaN(document.lengthCon.fromValue.value))
+            document.getElementById("invalido").innerHTML = "No es un número válido.";
+
+        else {
+            document.getElementById("invalido").innerHTML = factor * document.lengthCon.fromValue.value;
         }
+        }
+</script>
 
-
-td, tr  { 
-    font-family: sans-serif; 
-    font-size: 18px; 
-    font-weight: 400; 
-    color: #000000; 
-    background:#ffffff 
-}
-.bg-propio{
-    background-image: url('/imagenes/faltazo.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-
-
-}
-
-div  { 
-    background:#ffffff 
-}
-    </style>
-    <h2>Length Converter</h2>
-    <form name="lengthCon">
-        
-            <p class="Value">From</p> 
-                <select class="movement" name=fromUnit onChange="convertUnit()">
-                <option> meters
-                <option> kilometers
-                <option> miles
-          <option> feet 
-          <option> yards
-                </select>
-            
-             <p class="Options">To</p>
-            <p>
-                <select class="moves" name=toUnit onChange="convertUnit()">
-                <option> meters
-                <option> kilometers
-                <option> miles
-          <option> feet
-          <option> yards
-                </select>
-      </p>
-        
-            <p colspan="4"><div id="formula">meters = 1 meters</div></p>
-    
-            <p class="Walk">Enter </p>
-            <p><input class="around" type="text" name="fromValue" value="1" size="5" maxlength="10"></p>
-            <p><input class="yah"type=button value="Convert" onClick="convertUnit()"></p>
-            <p><span id="toValue"> 1</span></p>
-            <p>
-                <label>Feet</label>
-                <input id="inputFeet" type="number" placeholder="Feet" oninput="LengthConverter(this.value)" onchange="LengthConverter(this.value)">
-              </p>
-    </form>
-    <script>
-                    let factors1 = new Array(1, 0.001, 0.000621,3.28084,1.09361);
-            let factors2 = new Array(1000, 1, 0.621,3280.84,1093.61);
-            let factors3 = new Array(1609.34, 1.60934, 1,5280,1760);
-            let factors4 = new Array(0.3048,0.0003048,0.000189394,1,0.333333);
-            let factors5 = new Array(0.9144,0.0009144,0.000568182,3,1);
-            let factors = new Array(factors1,factors2,factors3,factors4,factors5);
-
-            function convertUnit()
-            {
-            // Grab the correct conversion factor from our arrays
-            fromIndex = document.lengthCon.fromUnit.selectedIndex;
-            toIndex = document.lengthCon.toUnit.selectedIndex;
-            factor = factors[fromIndex][toIndex];
-            // Create the text that we want to write on the middle line
-            fromUnitText = document.lengthCon.fromUnit.options[document.lengthCon.fromUnit.selectedIndex].text;
-            toUnitText = document.lengthCon.toUnit.options[document.lengthCon.toUnit.selectedIndex].text;
-            document.getElementById("formula").innerHTML = fromUnitText + ' = ' + factor + ' ' + toUnitText;
-            // Check the input box to make sure we have a valid number
-            if(isNaN(document.lengthCon.fromValue.value))
-                document.getElementById("toValue").innerHTML = "Not a valid number.";
-            // Output the converted number...last number on last line
-            else {
-                document.getElementById("toValue").innerHTML = factor * document.lengthCon.fromValue.value;
-            }
-            }
-    </script>
-    <div class="container-fluid text-center">
-        <form name="lengthCon">
-    <div class="row">
-        <div class="col bg-transparent">
-            <h1>Conversor</h1>
-        </div>
+<div class="row">
+    <div class="col bg-transparent">
+        <h1>Conversor</h1>
     </div>
-    <div class="row">
-        <div class="col-md-1 bg-trans"></div>
-        <div class="col-md-5 bg-white">
-            <p><input class="around" type="text" name="fromValue" value="1" size="5" maxlength="10"></p>
-        </div>
-        <div class="col-md-5 bg-white"><p class="Value"></p> 
-            <select class="movement" name=fromUnit onChange="convertUnit()">
-            <option> Metros
-            <option> Kilometros
-            <option> MIllas
-      <option> Pies 
-      <option> Yardas
-            </select>
-        </div>
-        <div class="col-md-1 bg-grey"></div>
-    </div>
-    <div class="row">
-        <div class="col-md-1 bg-trans"></div>
-        <div class="col-md-5 bg-white"><h2 class="Options">en</h2></div>
-        <div class="col-md-5 bg-white">            
-            <select class="movement" name=fromUnit onChange="convertUnit()">
-            <option> Metros
-            <option> Kilometros
-            <option> MIllas
-      <option> Pie 
-      <option> Yardas
-            </select>
-        </div>
-        <div class="col-md-1 bg-transparent"></div>
-    </div>
-    <div class="row">
-        <div class="col-md-1 bg-transparent"> </div>
-        <div class="col-md-5 bg-white"><h2>es</h2></div>
-        <div class="col-md-5 bg-white">
-            <p><input class="yah"type=button value="Convertir" onClick="convertUnit()"></p>
-            <p><span id="toValue"> 1</span></p></div>
-        <div class="col-md-1 bg-transparent"></div>
-    </div>
-    <div class="row">
-        <div class="col-md-12 bg-transparent">
-             
-        </div>
-    </div>
-    </form>
 </div>
+<ul>
+    <li>
+        <div class="row">
+            <div class="col-md-1 bg-trans">-</div>
+            <div class="col-md-10 bg-white"><h2>
+                <form name="lengthCon">
+                    <p class="Walk">Ingresar </p>
+                    <p><input class="around" type="text" name="fromValue" value="1" size="5" maxlength="10"></p>
+                    <p class="Value">Seleccionar medida</p> 
+                        <select class="movement" name=fromUnit onChange="convertUnit()">
+                        <option> metros
+                        <option> kilometros
+                        <option> millas
+                  <option> pies 
+                  <option> yardas
+                        </select>
+                    
+                     <p class="Options">en</p>
+                    <p>
+                        <select class="moves" name=toUnit onChange="convertUnit()">
+                        <option> metros
+                        <option> kilometros
+                        <option> millas
+                  <option> pies
+                  <option> yardas
+                        </select>
+              </p>
+       </li>
+    
+    <li>
+        <h1>El resultado es:</h1>
+        <p colspan="4"><div id="formula">metros = 1 metros</div></p>
+        <p><span id="invalido"> 1</span></p>
+    </li>
+</ul>
+
+    </form>
+    </h2></div>
+    <div class="col-md-1 bg-grey">-</div>
+</div>
+
+<style>
+    ul, li {
+    display: inline;
+    font-family: Arial;
+    font-size: 40px;
+
+  }
+</style>
+
 </body>

@@ -1,0 +1,56 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cambiar imagen de fondo</title>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Rubik+Mono+One&family=Rubik:wght@600&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Rubik+Mono+One&family=Rubik:wght@600&display=swap');
+   body {
+      background:url(/imagenes/dune-2021-4k_1635032307-1.jpg);
+        font-family: 'Rubik', Arial;
+        background: gray;
+    }
+
+</style>
+<script>
+	function cambiar1() {
+		document.getElementById('body').style.backgroundImage='url(/imagenes/eternals-portada.png)';
+	}
+    function cambiar2() {
+		document.getElementById('body').style.backgroundImage='url(/imagenes/venom-portada.png)';
+	}
+    function cambiar3() {
+		document.getElementById('body').style.backgroundImage='url(/imagenes/F9.png)';
+	}
+</script>
+</head>
+
+<body id="body">
+
+<button onclick="cambiar1();">Modo Claro</button>
+<button onclick="cambiar2();">Modo Oscuro</button>
+<button onclick="cambiar3();">Modo Gris</button>
+
+<script>
+    function calcularMediaAritmetica(lista) {
+  // let sumaLista = 0;
+  // for (let i = 0; i < lista.length; i++) {
+  //   sumaLista = sumaLista + lista[i];
+  // }
+
+  const sumaLista = lista.reduce(
+    function (valorAcumulado = 0, nuevoElemento) {
+      return valorAcumulado + nuevoElemento;
+    }
+  );
+
+  const promedioLista = sumaLista / lista.length;
+
+  return promedioLista;
+}
+</script>
+
+</body>
+</html>

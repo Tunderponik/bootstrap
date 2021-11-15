@@ -1,0 +1,54 @@
+<script>
+    const numero = document.getElementById("numero");
+    console.log(numero.contains('around'));
+
+
+
+    /*  const parrafo = document.getElementById("parrafo");
+      if (titulo.classList.contains("rojo")) {console.log("existe");
+      titulo.classList.remove("rojo");titulo.classList.add("verde");}
+      else{console.log("no existe");titulo.classList.add("rojo");}
+      setTimeout(cambiarContenido, 5000);function cambiarContenido()
+      {parrafo.innerHTML="Mi perro es muy gruñon";}*/
+</script>
+
+<body>
+    <div class="row">
+        <div class="col-md-1 bg-trans">-</div>
+        <div class="col-md-10 bg-white">
+            <h2>
+                <form name="lengthCon">
+                    <p class="Walk">Ingresar </p>
+                    <p><input class="around" type="text" name="fromValue" size="5" maxlength="10" id="numero">
+                    </p>
+                    <p class="Value">Seleccionar medida</p>
+                    <select class="movement" name=fromUnit>
+                        <option> metros
+                        <option> kilometros
+                        <option> millas
+                        <option> pies
+                        <option> yardas
+                    </select>
+
+                    <p class="Options">en</p>
+                    <p>
+                        <select class="moves" name=toUnit">
+                            <option> metros
+                            <option> kilometros
+                            <option> millas
+                            <option> pies
+                            <option> yardas
+                        </select>
+                    </p>
+
+                    <h1>El resultado es:</h1>
+                    <p colspan="4">
+                    <div id="formula">metros = 1 metros</div>
+                    </p>
+                    <p><span id="toValue"> 1</span></p>
+                </form>
+            </h2>
+        </div>
+        <div class="col-md-1 bg-grey">-</div>
+    </div>
+</body>
