@@ -3,26 +3,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cambiar imagen de fondo</title>
+<title>Cambiar imagen de fondo y calcular el promedio</title>
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Rubik+Mono+One&family=Rubik:wght@600&display=swap');
     @import url('https://fonts.googleapis.com/css2?family=Rubik+Mono+One&family=Rubik:wght@600&display=swap');
    body {
       background:url(/imagenes/dune-2021-4k_1635032307-1.jpg);
         font-family: 'Rubik', Arial;
-        background: gray;
+        background: #706f6f;
+    }
+    h1 {
+      color: blue !important;
+      text-align: center;
     }
 
 </style>
 <script>
 	function cambiar1() {
-		document.getElementById('body').style.backgroundImage='url(/imagenes/eternals-portada.png)';
+		document.getElementById('body').style.backgroundImage='url(/imagenes/blanco.png)';
 	}
     function cambiar2() {
-		document.getElementById('body').style.backgroundImage='url(/imagenes/venom-portada.png)';
+		document.getElementById('body').style.backgroundImage='url(/imagenes/negro.png)';
 	}
     function cambiar3() {
-		document.getElementById('body').style.backgroundImage='url(/imagenes/F9.png)';
+		document.getElementById('body').style.backgroundImage='url(/imagenes/gris.png)';
 	}
 </script>
 </head>
@@ -35,10 +39,6 @@
 
 <script>
     function calcularMediaAritmetica(lista) {
-  // let sumaLista = 0;
-  // for (let i = 0; i < lista.length; i++) {
-  //   sumaLista = sumaLista + lista[i];
-  // }
 
   const sumaLista = lista.reduce(
     function (valorAcumulado = 0, nuevoElemento) {
@@ -51,6 +51,15 @@
   return promedioLista;
 }
 </script>
+<script>
+var vr1 = prompt("Ingresar el primer valor");
+var vr2 = prompt("Ingresar el segundo valor");
+var vr3 = prompt("Ingresar el tercer valor");
+var p = (parseFloat(vr1)+parseFloat(vr2)+parseFloat(vr3))/3;
+alert("EL promedio es es: "+p)
+</script>
+
+<h1>Calcular promedio de tu nota</h1>
 
 </body>
 </html>
