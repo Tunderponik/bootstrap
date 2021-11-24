@@ -1,79 +1,122 @@
-<h1>Formulario HTML5</h1>
-<form action="formulario.php" method="post">
-<fieldset>
-    <legend>Datos</legend>
-    <div class="cont1">
-        <label for="mail">Mail</label>
-        <input type="email" id="mail" name="mail" placeholder="nombre@hosting.com" size="30" required="required" autofocus>
-        <br>
-        <br>
-        <label for="web">Web</label>
-        <input type="url" id="web" name="web" placeholder="http://www.ejemplo.com" size="50" required="required">
-        <br>
-        <br>
-        <label for="licencias">Número de licencias</label>
-        <input type="number" id="licencias" name="licencias" placeholder="1-10" min="1" max="10" required="required">
-    </div>
-</fieldset>
-<fieldset>
-    <legend>Datos Dirección</legend>
-    <div class="cont2">
-        <label for="nombre">Nombre</label>
-        <input type="text" id="nombre" name="nombre" placeholder="nombre y apellidos" size="50">
-        <br>
-        <br>
-        <label for="direccion">Dirección</label>
-        <textarea name="direccion" id="direccion" placeholder="calle, número, piso, ciudad" cols="30" rows="5" required="required"></textarea>
-        <br>
-        <br>
-        <label for="codigopostal">Código Postal</label>
-        <input type="text" id="codigopostal" placeholder="código postal" maxlength="5" required="required">
-        <br>
-        <br>
-        <label for="pais">País</label>
-        <select name="pais" id="pais" required="required">
-            <option value="AF">Afganistán</option>
-            <option value="AL">Albania</option>
-            <option value="ES" selected>España</option>
+<html>
 
-        </select>
-        <br>
-        <br>
-        <label for="telefono">Número de teléfono</label>
-        <input type="tel" id="telefono" name="telefono" required="required" placeholder="teléfono con prefijo">
-    </div>
-</fieldset>
-<fieldset>
-    <legend>Detalle Tarjeta</legend>
-    <div class="cont3">
-        <label for="tarjeta">Número Tarjeta</label>
-        <input type="number" id="tarjeta" name="tarjeta" required="required" placeholder="delante de la tarjeta">
-        <br>
-        <br>
-        <label for="cvv">CVV</label>
-        <input type="number" id="cvv" name="cvv" required="required" placeholder="3 dígitos" max="999">
-        <br>
-        <br>
-        <label for="caducidad">Fecha Caducidad</label>
-        <input type="month" id="caducidad" name="caducidad" required="required">
-        <br>
-        <br>
-    </div>
-</fieldset>
-<br>
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel='shortcut icon' type='image/x-icon' href='/imagenes/hotellasestrellas.png' />
+    <title>Hotel Las ESTRELLAS - Formulario de Contacto</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Rubik+Mono+One&family=Rubik:wght@600&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Rubik+Mono+One&family=Rubik:wght@600&display=swap');
+    body {
+        background-image: url('/imagenes/thumb-1920-1167021\(3\).png');
+        font-family: 'Rubik', -apple-system,BlinkMacSystemFont,segoe ui,Roboto,Oxygen,Ubuntu,Cantarell,open sans,helvetica neue,sans-serif;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-attachment: fixed;
+  }
+  h1, h2 {
+    border-bottom:orangered solid 10px;
+    font-family: Rubik Mono One;
+   }
+   p, label {
+    font-size: 25px;
+   }
 
-<label for="limite">Comentario adicional (no más de 140 caracteres): </label>
-<input type="text" id="limite" name="limite" required
-       minlength="150" maxlength="150" size="40" placeholder="Ingresar">
-        </div>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-        crossorigin="anonymous"></script>
-        <form name="formulario" method="post" action="/send.php">
-            <input type="submit" value="Enviar formulario" />
+  ::selection {
+    background-color: #8e44ad;
+    color: white;
+  }
 
-<input type="submit" value="Enviar" >
-<input class="boton2" type="reset" value="Borrar" >
+  a:hover {
+    color: rgb(162, 0, 255);
+}
+</style>
+<body>
 
-</form>
+    <div class="container-fluid text-center">
+        <div class="row">
+            <div class="col-md-6 bg-white bg-propio"><img
+                    src="https://s3.amazonaws.com/arc-wordpress-client-uploads/infobae-wp/wp-content/uploads/2019/05/20152251/Dorado-Beach-a-Ritz-Carlton-Reserve-3.jpg" alt=""
+                    width="600" height="1400"></div>
+            <div class="col-md-6 bg-white">
+                <img src="https://balandret.com/wp-content/uploads/2017/12/Trivagologo.png"
+                    alt="" width="300px" height="150px">
+                    <h1>CONTACTO</h1>
+
+                    <form action="formulario.php" method="post">
+                            <div class="cont1">
+                                <label for="nombre">Nombre y apellido:</label>
+                                <input type="text" id="nombre" name="nombre" placeholder="Escriba su nombre y apellido" size="40">
+                                <br>
+                                <br>
+                                <label for="mail">Mail:</label>
+                                <input type="email" id="mail" name="mail" placeholder="nombre@gmail.com" size="35" required="required" autofocus>
+                                <br>
+                                <br>
+                                <label for="pais">País</label>
+                                <select name="pais" id="pais" required="required">
+                                    <option value="AR">Argentina</option>
+                                    <option value="CL">Chile</option>
+                                    <option value="PE" selected>Perú</option>
+                                </select>
+                                <br>
+                                <br>
+                                <label for="direccion">Dirección</label>
+                                <textarea name="direccion" id="direccion" placeholder="Provincia, ciudad, calle, número, piso." cols="30" rows="5" required="required"></textarea>
+                                <br>
+                                <br>
+                                <label for="codigopostal">Código Postal:</label>
+                                <input type="text" id="codigopostal" placeholder="Escriba su código postal" size="24" maxlength="5" required="required">
+                                <br>
+                                <br>
+                                <label for="telefono">Número de teléfono:</label>
+                                <input type="tel" id="telefono" name="telefono" required="required" size="40" placeholder="Escriba su número con prefijo">
+                                <br>
+                                <br>
+                                <label for="pais">¿Asiste usted con mascotas?: </label>
+                                <select name="mascotas" id="mascotas" required="required">
+                                    <option value="mascotassi">Si</option>
+                                    <option value="mascotasno">No</option>
+                                </select>
+                                <label for="noches">Noches:</label>
+                                <input type="number" id="noches" name="noches">
+                            </div>
+                        </fieldset>
+                        <fieldset>
+                            <h2>Compre ahora</h2>
+                            <div class="cont2">
+                                <label for="tarjeta">Número Tarjeta</label>
+                                <input type="number" id="tarjeta" name="tarjeta" required="required" placeholder="Escriba el delante de la tarjeta">
+                                <br>
+                                <br>
+                                <label for="cvv">CVV</label>
+                                <input type="number" id="cvv" name="cvv" required="required" placeholder="3 dígitos" max="999">
+                                <br>
+                                <br>
+                                <label for="caducidad">Fecha Caducidad</label>
+                                <input type="month" id="caducidad" name="caducidad" required="required">
+                                <br>
+                                <br>
+                            </div>
+                        </fieldset>
+                        <h2>Comentario adicional</h2>
+                        <label for="limite">No debe superar los 140 caracteres: </label>
+                        <input type="text" id="limite" name="limite" required
+                               minlength="150" maxlength="150" size="40" placeholder="Escribe tus pensamientos...">
+                                </div>
+                            </div>
+                            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+                                integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+                                crossorigin="anonymous"></script>
+                                <form name="formulario" method="post" action="/send.php">
+                        
+                        <input type="submit" value="Envíar" >
+                        <input class="boton2" type="reset" value="Borrar" >
+                        <br>
+                        </form>
+              </form>
+              
+</body>
