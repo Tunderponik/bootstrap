@@ -1,0 +1,79 @@
+<h1>Formulario HTML5</h1>
+<form action="formulario.php" method="post">
+<fieldset>
+    <legend>Datos</legend>
+    <div class="cont1">
+        <label for="mail">Mail</label>
+        <input type="email" id="mail" name="mail" placeholder="nombre@hosting.com" size="30" required="required" autofocus>
+        <br>
+        <br>
+        <label for="web">Web</label>
+        <input type="url" id="web" name="web" placeholder="http://www.ejemplo.com" size="50" required="required">
+        <br>
+        <br>
+        <label for="licencias">Número de licencias</label>
+        <input type="number" id="licencias" name="licencias" placeholder="1-10" min="1" max="10" required="required">
+    </div>
+</fieldset>
+<fieldset>
+    <legend>Datos Dirección</legend>
+    <div class="cont2">
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" name="nombre" placeholder="nombre y apellidos" size="50">
+        <br>
+        <br>
+        <label for="direccion">Dirección</label>
+        <textarea name="direccion" id="direccion" placeholder="calle, número, piso, ciudad" cols="30" rows="5" required="required"></textarea>
+        <br>
+        <br>
+        <label for="codigopostal">Código Postal</label>
+        <input type="text" id="codigopostal" placeholder="código postal" maxlength="5" required="required">
+        <br>
+        <br>
+        <label for="pais">País</label>
+        <select name="pais" id="pais" required="required">
+            <option value="AF">Afganistán</option>
+            <option value="AL">Albania</option>
+            <option value="ES" selected>España</option>
+
+        </select>
+        <br>
+        <br>
+        <label for="telefono">Número de teléfono</label>
+        <input type="tel" id="telefono" name="telefono" required="required" placeholder="teléfono con prefijo">
+    </div>
+</fieldset>
+<fieldset>
+    <legend>Detalle Tarjeta</legend>
+    <div class="cont3">
+        <label for="tarjeta">Número Tarjeta</label>
+        <input type="number" id="tarjeta" name="tarjeta" required="required" placeholder="delante de la tarjeta">
+        <br>
+        <br>
+        <label for="cvv">CVV</label>
+        <input type="number" id="cvv" name="cvv" required="required" placeholder="3 dígitos" max="999">
+        <br>
+        <br>
+        <label for="caducidad">Fecha Caducidad</label>
+        <input type="month" id="caducidad" name="caducidad" required="required">
+        <br>
+        <br>
+    </div>
+</fieldset>
+<br>
+
+<label for="limite">Comentario adicional (no más de 140 caracteres): </label>
+<input type="text" id="limite" name="limite" required
+       minlength="150" maxlength="150" size="40" placeholder="Ingresar">
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+        <form name="formulario" method="post" action="/send.php">
+            <input type="submit" value="Enviar formulario" />
+
+<input type="submit" value="Enviar" >
+<input class="boton2" type="reset" value="Borrar" >
+
+</form>

@@ -8,9 +8,29 @@
     <title>Hotel Las ESTRELLAS - Formulario de Contacto</title>
 </head>
 <style>
+    @import url('https://fonts.googleapis.com/css2?family=Rubik+Mono+One&family=Rubik:wght@600&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Rubik+Mono+One&family=Rubik:wght@600&display=swap');
     body {
         background-image: url('/imagenes/thumb-1920-1167021\(3\).png');
+        font-family: 'Rubik', -apple-system,BlinkMacSystemFont,segoe ui,Roboto,Oxygen,Ubuntu,Cantarell,open sans,helvetica neue,sans-serif;
+        background-repeat: no-repeat;
   }
+  h1, h2 {
+    border-bottom:orangered solid 10px;
+    font-family: Rubik Mono One;
+   }
+   p, label {
+    font-size: 25px;
+   }
+
+  ::selection {
+    background-color: #8e44ad;
+    color: white;
+  }
+
+  a:hover {
+    color: rgb(162, 0, 255);
+}
 </style>
 <body>
 
@@ -18,22 +38,35 @@
         <div class="row">
             <div class="col-md-6 bg-white bg-propio"><img
                     src="https://s3.amazonaws.com/arc-wordpress-client-uploads/infobae-wp/wp-content/uploads/2019/05/20152251/Dorado-Beach-a-Ritz-Carlton-Reserve-3.jpg" alt=""
-                    width="800" height="400"></div>
+                    width="600" height="900"></div>
             <div class="col-md-6 bg-white">
                 <img src="https://balandret.com/wp-content/uploads/2017/12/Trivagologo.png"
                     alt="" width="300px" height="150px">
                     <h1>CONTACTO</h1>
-                    <label for="limite">Comentario adicional (no más de 140 caracteres):
-    
-    </label>
+
+                <p>Nombre y apellido</p>
+                <div class="wrap-input100 m-b-10 validate-input" data-validate="Nombre y apellido obligatorio">
+                    <input class="s1-txt4 placeholder0 input100" type="text" size="40" name="nombre" id="nombre" placeholder="Ingresar">
+                    <span class="focus-input100"></span>
+                </div>
+                <form action="../../form-result.php" method="post" target="_blank">
+                    <p>
+                      Teléfono: <input type="tel" size="18" name="telefono" placeholder="(Código de área) Número">
+                    </p>
+                  </form>
+
+
+                    <label for="limite">Comentario adicional (no más de 140 caracteres): </label>
     
     <input type="text" id="limite" name="limite" required
-           minlength="150" maxlength="150" size="50">
+           minlength="150" maxlength="150" size="40" placeholder="Ingresar">
             </div>
         </div>
-
-
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
             crossorigin="anonymous"></script>
+            <form name="formulario" method="post" action="/send.php">
+                <input type="submit" value="Enviar formulario" />
+              </form>
+              
 </body>
